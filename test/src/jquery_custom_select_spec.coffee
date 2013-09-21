@@ -1,5 +1,8 @@
 describe "CustomSelect", ->
 
+  FOCUS_CLASS = "global__select--focus"
+  PLACEHOLDER_CLASS = "global__select--placeholder"
+
   getSelectedText = (container) ->
     container.contents()[1].nodeValue
 
@@ -28,7 +31,7 @@ describe "CustomSelect", ->
 
       it "adds focus class", ->
         select.trigger("focus")
-        expect(container.hasClass("custom-select--focus")).to.be.ok()
+        expect(container.hasClass(FOCUS_CLASS)).to.be.ok()
 
     describe "on select", ->
 
@@ -45,7 +48,7 @@ describe "CustomSelect", ->
       it "removes focus class", ->
         select.trigger("focus")
         select.trigger("blur")
-        expect(container.hasClass("custom-select--focus")).not.to.be.ok()
+        expect(container.hasClass(FOCUS_CLASS)).not.to.be.ok()
 
   describe "with placeholder", ->
 
@@ -67,11 +70,11 @@ describe "CustomSelect", ->
         expect(select.html()).to.be('<option disabled="true" selected="selected">placeholder</option>')
 
       it "adds placeholder class", ->
-        expect(container.hasClass("custom-select--placeholder")).to.be.ok()
+        expect(container.hasClass(PLACEHOLDER_CLASS)).to.be.ok()
 
     describe "on blur", ->
 
       it "adds placeholder class when placeholder option is selected", ->
         select.trigger("change")
         select.trigger("blur")
-        expect(container.hasClass("custom-select--placeholder")).to.be.ok()
+        expect(container.hasClass(PLACEHOLDER_CLASS)).to.be.ok()
