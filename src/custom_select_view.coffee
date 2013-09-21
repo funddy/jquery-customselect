@@ -1,7 +1,7 @@
 class FUNDDY.CustomSelect.View
 
-  PLACEHOLDER_CLASS = "custom-select--placeholder"
-  FOCUS_CLASS = "custom-select--focus"
+  PLACEHOLDER_CLASS = "global__select--placeholder"
+  FOCUS_CLASS = "global__select--focus"
   TEXT_NODE_TYPE = 3
 
   constructor: (@elements) ->
